@@ -1,0 +1,31 @@
+<h1 mat-dialog-title class="full-width">Editar fatura {{data.nome_empresa}}</h1>
+<div mat-dialog-content class="full-width">
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Empresa" [(ngModel)]="data.nome_empresa">
+    </mat-form-field>
+    <div *ngIf="nomeError" style="color: red">
+        Nome Empresa invalido.
+    </div>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Valor" [(ngModel)]="data.valor">
+    </mat-form-field>
+    <div *ngIf="valorError" style="color: red">
+        valor invalido.
+    </div>
+    <mat-form-field>
+        <input matInput [matDatepicker]="dataVencimento" placeholder="Vencimento" [(ngModel)]="data.data_vencimento">
+        <mat-datepicker-toggle matSuffix [for]="dataVencimento"></mat-datepicker-toggle>
+        <mat-datepicker #dataVencimento></mat-datepicker>
+    </mat-form-field>
+    <div *ngIf="dataError" style="color: red">
+        Data vencimento invalido.
+    </div>
+    <br>
+    <!-- <mat-slide-toggle [(ngModel)]="data.pagou">
+        <b>Pagou: </b>
+    </mat-slide-toggle> -->
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Não</button>
+    <button mat-button (click)="salvarFatura(data)" cdkFocusInitial style="color: seagreen">Sim</button>
+</div>

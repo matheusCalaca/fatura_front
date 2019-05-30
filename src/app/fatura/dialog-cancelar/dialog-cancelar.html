@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Deseja Excluir fatura {{data.nome_empresa}}</h1>
+<div mat-dialog-content>
+    <p><b>Empresa: </b> {{data.nome_empresa}}</p>
+    <p><b>valor: </b> {{data.valor}}</p>
+    <p><b>Vencimento: </b> {{data.data_vencimento | date:'dd/MM/yy'}}</p>
+    <p><b>Pagou: </b> <i class="material-icons" style="color: green" *ngIf=data.pagou>done</i>
+        <i class="material-icons" style="color: gainsboro" *ngIf=!data.pagou>fiber_manual_record</i></p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Não</button>
+    <button mat-button  (click)="cancelarFatura(data)" cdkFocusInitial style="color: seagreen">Sim</button>
+</div>

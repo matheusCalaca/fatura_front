@@ -1,0 +1,57 @@
+<div class="mat-elevation-z8">
+  <div class="divBTNovo" style="  padding-top: 13px;">
+    <button mat-raised-button color="accent" (click)="openDialogNovo()"><i class="material-icons">add</i> Nova Fatura</button>
+  </div>
+  <div>
+
+    <table mat-table [dataSource]="dataSource">
+
+      <!-- nome empresa Column -->
+      <ng-container matColumnDef="empresa">
+        <th mat-header-cell *matHeaderCellDef> Empresa </th>
+        <td mat-cell *matCellDef="let element"> {{element.nome_empresa}} </td>
+      </ng-container>
+
+      <!-- Valor Column -->
+      <ng-container matColumnDef="valor">
+        <th mat-header-cell *matHeaderCellDef> Valor </th>
+        <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+      </ng-container>
+
+      <!-- data vencimento Column -->
+      <ng-container matColumnDef="data_vencimento">
+        <th mat-header-cell *matHeaderCellDef> Vencimento </th>
+        <td mat-cell *matCellDef="let element"> {{element.data_vencimento | date:'dd/MM/yy'}} </td>
+      </ng-container>
+
+      <!-- fatura paga Column -->
+      <ng-container matColumnDef="pagou">
+        <th mat-header-cell *matHeaderCellDef> Paga </th>
+        <td mat-cell *matCellDef="let element">
+          <i class="material-icons" style="color: green" *ngIf=element.pagou>done</i>
+          <i class="material-icons" style="color: gainsboro" *ngIf=!element.pagou>fiber_manual_record</i>
+        </td>
+      </ng-container>
+
+      <!-- fatura opcoes Column -->
+      <ng-container matColumnDef="opcoes">
+        <th mat-header-cell *matHeaderCellDef> Opçoes </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button>
+            <mat-icon aria-label="delete  fatura" style="color: red" (click)="openDialog(element)">delete</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon aria-label="editar  fatura" style="color: lightskyblue" (click)="openDialogEditar(element)">edit
+            </mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" [pageSize]="pageSize" [length]="length" showFirstLastButtons
+      (page)="test($event)"></mat-paginator>
+
+  </div>
+</div>

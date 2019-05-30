@@ -1,0 +1,17 @@
+<div *ngIf="showLogin()" style="position: absolute;top: 60px;text-align: center;display: flex;flex-direction: column;width: 100%;">
+  <mat-form-field class="full-width">
+    <input matInput placeholder="cpf" [(ngModel)]="cpf">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput type="password" placeholder="Senha" [(ngModel)]="senha">
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="accent" (click)="login()">LOGIN</button>
+  </div>
+</div>
+<div *ngIf="!showLogin()">
+  <div>Usuario logado : {{user}}</div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="accent" (click)="logout()">LOGOUT</button>
+      </div>
+</div>

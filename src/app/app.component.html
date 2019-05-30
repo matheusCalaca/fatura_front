@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="head" id="head">
+  <h1 style="margin: 10px;">fatura - MATHEUS CALAÇA</h1>
+  <div class="login">
+    <app-login></app-login>
+  </div>
+</div>
+<div>
+  <app-fatura *ngIf="showTable()"></app-fatura>
+</div>
+
+<router-outlet></router-outlet>
