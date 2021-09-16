@@ -1,6 +1,7 @@
 {
   "name": "fatura-calaca",
   "version": "0.0.0",
+  "author": "Matheus Calaça",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
