@@ -1,27 +1,33 @@
 # faturaCalaca
 
+Esse projeto tem como objetivo você salvar uma fatura para um usuario e poder fazer o controle do que esta em aberto do que já foi pago e o que está para vencer
+
+
+## daddos projeto
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Start
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. execute o projeto de backend [git](https://github.com/matheusCalaca/fatura_back)
 
-## Build
+2. instalr dependencias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```sh
+    npm install
+```
 
-## Running unit tests
+3. executar projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+    $ npm start
+    
+    OU
 
-## Running end-to-end tests
+    $ ng server
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+4. [Aplicação](http://localhost:4200/)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
